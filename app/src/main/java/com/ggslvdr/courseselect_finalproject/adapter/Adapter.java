@@ -10,9 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ggslvdr.courseselect_finalproject.R;
+import com.ggslvdr.courseselect_finalproject.model.Courses;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
+    private List<Courses> coursesList;
+
+    public Adapter(List<Courses> list) {
+        this.coursesList = list;
+    }
 
     @NonNull
     @Override
@@ -26,16 +35,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.courseName.setText("Java");
-        holder.courseCode.setText("JAV1001");
-        holder.professor.setText("David Vallieres");
-        holder.description.setText("App Development for Android");
+
+        Courses courses = coursesList.get(position);
+        holder.courseName.setText(courses.getName());
+        holder.courseCode.setText(courses.getCode());
+        holder.description.setText(courses.getDescription());
+        holder.professor.setText(courses.getProfessor());
 
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return coursesList.size();
     }
 
     public static class myViewHolder extends RecyclerView.ViewHolder{

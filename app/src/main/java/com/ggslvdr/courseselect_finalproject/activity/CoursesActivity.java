@@ -1,8 +1,10 @@
 package com.ggslvdr.courseselect_finalproject.activity;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,11 +27,14 @@ public class CoursesActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.coursesRecyclerView);
         this.createCourses();
 
-        Adapter adapter = new Adapter();
+        Adapter adapter = new Adapter(listCourses);
 
         recyclerView.setAdapter(adapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
+
+
 
     }
 
