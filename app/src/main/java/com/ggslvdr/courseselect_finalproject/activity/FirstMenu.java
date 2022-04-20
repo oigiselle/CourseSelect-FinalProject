@@ -8,12 +8,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.ggslvdr.courseselect_finalproject.R;
+import com.ggslvdr.courseselect_finalproject.model.Courses;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FirstMenu extends AppCompatActivity {
 
     private ImageButton profilebtn;
-
     private Button programbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +39,9 @@ public class FirstMenu extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-
-
-
-
     }
+
+
 
 
 
